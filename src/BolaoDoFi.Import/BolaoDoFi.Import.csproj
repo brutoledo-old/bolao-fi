@@ -1,0 +1,223 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EPPlus-UDI-Fork" Version="4.5.19" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Bets\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BolaoDoFi.Core\BolaoDoFi.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Alexandre Potenza.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Amauri Bacci.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Ana Carolina.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Antonio Custodio.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Barbara Hipolide.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Braulio Ferraroli.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Bruna Engholm.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Bruno Leiva.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Bruno Toledo.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Bu Loschiavo.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Carlos Coutinho.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Cassio Sturlini.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Cezar Munhoz.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Chico Ferraroli.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Cintia Santos.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Concilio Silva.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Cristina Santos.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Denis Ishikawa.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Erick Griscenco.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Felipe Borges.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Fernanda Ferraroli.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Filipe_Bacci.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Flavio Bacci.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Gabriel Goncalves.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Guilherme Tavares.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Hugo Casadei.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Irma Potenza.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Isabela Oliveira.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Jane Ferraroli.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Joao Pedro.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Jose Pedroso.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Katia Merino.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Leandro_Guedes.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Leoni Ferraroli.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Lucas Bacci.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Lucas Fernandes.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Lucas Hanna.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Luis Longhini.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Malu Ferraroli.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Marcelo Alexandre.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Marcelo Potenza.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Marco Ferraroli.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Marco Garcia.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Marco Martins.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Marilia Pastana.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Marina Vita.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Mateus Moraes.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Mauricio Tonidandel.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Morgana Bacci.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Nadir Ishikawa.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Nando Ferraroli.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Paulo Ferrarolli.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Rafael Castanheira.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Renato Julio Ribeiro.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Renato Lee.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Ricardo Balada.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Rodrigo Garcia.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Sofia Ishikawa Casadei.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Thais Azevedo.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Thatiana Valle.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Vero Ishikawa.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Victor Lanzuolo.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Vinicius Tavares.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Vitor Morales.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Ze Renato.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Bets\BOLÃO DA COPA DO MUNDO 2022 QATAR_Zuca.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

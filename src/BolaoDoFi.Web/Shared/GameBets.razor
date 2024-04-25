@@ -1,0 +1,584 @@
+﻿@using BolaoDoFi.Core.Models
+@using BolaoDoFi.Web.Pages
+@using ChartJs.Blazor.Common
+@using ChartJs.Blazor.PieChart
+@using ChartJs.Blazor.Util
+@using static BolaoDoFi.Web.Pages.FetchData
+@inject HttpClient Http
+
+<div class="games-bet-container">
+    <div class="row">
+        <div class="col-3">
+            @if (_betsSummary != null && _betsSummary.Count > 0)
+            {
+                <ul>
+                    @foreach (var bet in _betsSummary)
+                    {
+                        <li>
+                            <b>@bet.Key</b>
+                            <ul>
+                                @foreach (var player in bet.Value)
+                                {
+                                    <li>@player</li>
+                                }
+                            </ul>
+                        </li>
+                    }
+                </ul>
+            }
+        </div>
+        <div class="col-9">
+            @if (_config != null)
+            {
+                <Chart Config="_config" @ref="chartjs"></Chart>
+            }
+        </div>
+    </div>
+</div>
+
+
+@code {
+
+    // Demonstrates how a parent component can supply parameters
+    //[Parameter]
+    //public string? Data { get; set; }
+    private List<PlayerBets> _allPlayersBets;
+    private Chart chartjs;
+    private PieConfig _config;
+    private Dictionary<string, List<string>> _betsSummary;
+    private string _lastGameKey;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _allPlayersBets = await Http.GetFromJsonAsync<List<PlayerBets>>("data/player_bets.json");
+        _betsSummary = new Dictionary<string, List<string>>();
+        _config = new PieConfig
+            {
+                Options = new PieOptions
+                {
+                    Responsive = true,
+                    Title = new OptionsTitle
+                    {
+                        Display = false
+                    }
+                }
+            };
+    }
+
+    public async Task Refresh(string gameKey, string gameTitle = "")
+    {
+        if (_lastGameKey != gameKey)
+        {
+            _betsSummary = ExtractGameBets(gameKey);
+            SetupGameChart(gameTitle);
+            _lastGameKey = gameKey;
+
+            await chartjs.Update();
+            StateHasChanged();
+        }
+    }
+
+    private Dictionary<string, List<string>> ExtractGameBets(string gameKey)
+    {
+        switch (gameKey)
+        {
+            // GRUPO A
+            case "GameA1":
+                var GameA1 = _allPlayersBets.Select(p => new { p.Name, p.GameA1 });
+                return GameA1
+                    .OrderBy(b => b.GameA1.Team1Goals)
+                    .ThenBy(b => b.GameA1.Team2Goals)
+                    .GroupBy(p => p.GameA1.Formatted)
+                    .ToDictionary(g => g.Key, g => g.Select(p => p.Name).ToList());
+                break;
+
+            case "GameA2":
+                var GameA2 = _allPlayersBets.Select(p => new { p.Name, p.GameA2 });
+                return GameA2
+                    .OrderBy(b => b.GameA2.Team1Goals)
+                    .ThenBy(b => b.GameA2.Team2Goals)
+                    .GroupBy(p => p.GameA2.Formatted)
+                    .ToDictionary(g => g.Key, g => g.Select(p => p.Name).ToList());
+                break;
+
+            case "GameA3":
+                var GameA3 = _allPlayersBets.Select(p => new { p.Name, p.GameA3 });
+                return GameA3
+                    .OrderBy(b => b.GameA3.Team1Goals)
+                    .ThenBy(b => b.GameA3.Team2Goals)
+                    .GroupBy(p => p.GameA3.Formatted)
+                    .ToDictionary(g => g.Key, g => g.Select(p => p.Name).ToList());
+                break;
+
+            case "GameA4":
+                var GameA4 = _allPlayersBets.Select(p => new { p.Name, p.GameA4 });
+                return GameA4
+                    .OrderBy(b => b.GameA4.Team1Goals)
+                    .ThenBy(b => b.GameA4.Team2Goals)
+                    .GroupBy(p => p.GameA4.Formatted)
+                    .ToDictionary(g => g.Key, g => g.Select(p => p.Name).ToList());
+                break;
+
+            case "GameA5":
+                var GameA5 = _allPlayersBets.Select(p => new { p.Name, p.GameA5 });
+                return GameA5
+                    .OrderBy(b => b.GameA5.Team1Goals)
+                    .ThenBy(b => b.GameA5.Team2Goals)
+                    .GroupBy(p => p.GameA5.Formatted)
+                    .ToDictionary(g => g.Key, g => g.Select(p => p.Name).ToList());
+                break;
+
+            case "GameA6":
+                var GameA6 = _allPlayersBets.Select(p => new { p.Name, p.GameA6 });
+                return GameA6
+                    .OrderBy(b => b.GameA6.Team1Goals)
+                    .ThenBy(b => b.GameA6.Team2Goals)
+                    .GroupBy(p => p.GameA6.Formatted)
+                    .ToDictionary(g => g.Key, g => g.Select(p => p.Name).ToList());
+                break;
+
+            // GRUPO B
+            case "GameB1":
+                var GameB1 = _allPlayersBets.Select(p => new { p.Name, p.GameB1 });
+                return GameB1
+                    .OrderBy(b => b.GameB1.Team1Goals)
+                    .ThenBy(b => b.GameB1.Team2Goals)
+                    .GroupBy(p => p.GameB1.Formatted)
+                    .ToDictionary(g => g.Key, g => g.Select(p => p.Name).ToList());
+                break;
+
+            case "GameB2":
+                var GameB2 = _allPlayersBets.Select(p => new { p.Name, p.GameB2 });
+                return GameB2
+                    .OrderBy(b => b.GameB2.Team1Goals)
+                    .ThenBy(b => b.GameB2.Team2Goals)
+                    .GroupBy(p => p.GameB2.Formatted)
+                    .ToDictionary(g => g.Key, g => g.Select(p => p.Name).ToList());
+                break;
+
+            case "GameB3":
+                var GameB3 = _allPlayersBets.Select(p => new { p.Name, p.GameB3 });
+                return GameB3
+                    .OrderBy(b => b.GameB3.Team1Goals)
+                    .ThenBy(b => b.GameB3.Team2Goals)
+                    .GroupBy(p => p.GameB3.Formatted)
+                    .ToDictionary(g => g.Key, g => g.Select(p => p.Name).ToList());
+                break;
+
+            case "GameB4":
+                var GameB4 = _allPlayersBets.Select(p => new { p.Name, p.GameB4 });
+                return GameB4
+                    .OrderBy(b => b.GameB4.Team1Goals)
+                    .ThenBy(b => b.GameB4.Team2Goals)
+                    .GroupBy(p => p.GameB4.Formatted)
+                    .ToDictionary(g => g.Key, g => g.Select(p => p.Name).ToList());
+                break;
+
+            case "GameB5":
+                var GameB5 = _allPlayersBets.Select(p => new { p.Name, p.GameB5 });
+                return GameB5
+                    .OrderBy(b => b.GameB5.Team1Goals)
+                    .ThenBy(b => b.GameB5.Team2Goals)
+                    .GroupBy(p => p.GameB5.Formatted)
+                    .ToDictionary(g => g.Key, g => g.Select(p => p.Name).ToList());
+                break;
+
+            case "GameB6":
+                var GameB6 = _allPlayersBets.Select(p => new { p.Name, p.GameB6 });
+                return GameB6
+                    .OrderBy(b => b.GameB6.Team1Goals)
+                    .ThenBy(b => b.GameB6.Team2Goals)
+                    .GroupBy(p => p.GameB6.Formatted)
+                    .ToDictionary(g => g.Key, g => g.Select(p => p.Name).ToList());
+                break;
+
+            // GRUPO C
+            case "GameC1":
+                var GameC1 = _allPlayersBets.Select(p => new { p.Name, p.GameC1 });
+                return GameC1
+                    .OrderBy(b => b.GameC1.Team1Goals)
+                    .ThenBy(b => b.GameC1.Team2Goals)
+                    .GroupBy(p => p.GameC1.Formatted)
+                    .ToDictionary(g => g.Key, g => g.Select(p => p.Name).ToList());
+                break;
+
+            case "GameC2":
+                var GameC2 = _allPlayersBets.Select(p => new { p.Name, p.GameC2 });
+                return GameC2
+                    .OrderBy(b => b.GameC2.Team1Goals)
+                    .ThenBy(b => b.GameC2.Team2Goals)
+                    .GroupBy(p => p.GameC2.Formatted)
+                    .ToDictionary(g => g.Key, g => g.Select(p => p.Name).ToList());
+                break;
+
+            case "GameC3":
+                var GameC3 = _allPlayersBets.Select(p => new { p.Name, p.GameC3 });
+                return GameC3
+                    .OrderBy(b => b.GameC3.Team1Goals)
+                    .ThenBy(b => b.GameC3.Team2Goals)
+                    .GroupBy(p => p.GameC3.Formatted)
+                    .ToDictionary(g => g.Key, g => g.Select(p => p.Name).ToList());
+                break;
+
+            case "GameC4":
+                var GameC4 = _allPlayersBets.Select(p => new { p.Name, p.GameC4 });
+                return GameC4
+                    .OrderBy(b => b.GameC4.Team1Goals)
+                    .ThenBy(b => b.GameC4.Team2Goals)
+                    .GroupBy(p => p.GameC4.Formatted)
+                    .ToDictionary(g => g.Key, g => g.Select(p => p.Name).ToList());
+                break;
+
+            case "GameC5":
+                var GameC5 = _allPlayersBets.Select(p => new { p.Name, p.GameC5 });
+                return GameC5
+                    .OrderBy(b => b.GameC5.Team1Goals)
+                    .ThenBy(b => b.GameC5.Team2Goals)
+                    .GroupBy(p => p.GameC5.Formatted)
+                    .ToDictionary(g => g.Key, g => g.Select(p => p.Name).ToList());
+                break;
+
+            case "GameC6":
+                var GameC6 = _allPlayersBets.Select(p => new { p.Name, p.GameC6 });
+                return GameC6
+                    .OrderBy(b => b.GameC6.Team1Goals)
+                    .ThenBy(b => b.GameC6.Team2Goals)
+                    .GroupBy(p => p.GameC6.Formatted)
+                    .ToDictionary(g => g.Key, g => g.Select(p => p.Name).ToList());
+                break;
+
+            // GRUPO D
+            case "GameD1":
+                var GameD1 = _allPlayersBets.Select(p => new { p.Name, p.GameD1 });
+                return GameD1
+                    .OrderBy(b => b.GameD1.Team1Goals)
+                    .ThenBy(b => b.GameD1.Team2Goals)
+                    .GroupBy(p => p.GameD1.Formatted)
+                    .ToDictionary(g => g.Key, g => g.Select(p => p.Name).ToList());
+                break;
+
+            case "GameD2":
+                var GameD2 = _allPlayersBets.Select(p => new { p.Name, p.GameD2 });
+                return GameD2
+                    .OrderBy(b => b.GameD2.Team1Goals)
+                    .ThenBy(b => b.GameD2.Team2Goals)
+                    .GroupBy(p => p.GameD2.Formatted)
+                    .ToDictionary(g => g.Key, g => g.Select(p => p.Name).ToList());
+                break;
+
+            case "GameD3":
+                var GameD3 = _allPlayersBets.Select(p => new { p.Name, p.GameD3 });
+                return GameD3
+                    .OrderBy(b => b.GameD3.Team1Goals)
+                    .ThenBy(b => b.GameD3.Team2Goals)
+                    .GroupBy(p => p.GameD3.Formatted)
+                    .ToDictionary(g => g.Key, g => g.Select(p => p.Name).ToList());
+                break;
+
+            case "GameD4":
+                var GameD4 = _allPlayersBets.Select(p => new { p.Name, p.GameD4 });
+                return GameD4
+                    .OrderBy(b => b.GameD4.Team1Goals)
+                    .ThenBy(b => b.GameD4.Team2Goals)
+                    .GroupBy(p => p.GameD4.Formatted)
+                    .ToDictionary(g => g.Key, g => g.Select(p => p.Name).ToList());
+                break;
+
+            case "GameD5":
+                var GameD5 = _allPlayersBets.Select(p => new { p.Name, p.GameD5 });
+                return GameD5
+                    .OrderBy(b => b.GameD5.Team1Goals)
+                    .ThenBy(b => b.GameD5.Team2Goals)
+                    .GroupBy(p => p.GameD5.Formatted)
+                    .ToDictionary(g => g.Key, g => g.Select(p => p.Name).ToList());
+                break;
+
+            case "GameD6":
+                var GameD6 = _allPlayersBets.Select(p => new { p.Name, p.GameD6 });
+                return GameD6
+                    .OrderBy(b => b.GameD6.Team1Goals)
+                    .ThenBy(b => b.GameD6.Team2Goals)
+                    .GroupBy(p => p.GameD6.Formatted)
+                    .ToDictionary(g => g.Key, g => g.Select(p => p.Name).ToList());
+                break;
+
+            // GRUPO E
+            case "GameE1":
+                var GameE1 = _allPlayersBets.Select(p => new { p.Name, p.GameE1 });
+                return GameE1
+                    .OrderBy(b => b.GameE1.Team1Goals)
+                    .ThenBy(b => b.GameE1.Team2Goals)
+                    .GroupBy(p => p.GameE1.Formatted)
+                    .ToDictionary(g => g.Key, g => g.Select(p => p.Name).ToList());
+                break;
+
+            case "GameE2":
+                var GameE2 = _allPlayersBets.Select(p => new { p.Name, p.GameE2 });
+                return GameE2
+                    .OrderBy(b => b.GameE2.Team1Goals)
+                    .ThenBy(b => b.GameE2.Team2Goals)
+                    .GroupBy(p => p.GameE2.Formatted)
+                    .ToDictionary(g => g.Key, g => g.Select(p => p.Name).ToList());
+                break;
+
+            case "GameE3":
+                var GameE3 = _allPlayersBets.Select(p => new { p.Name, p.GameE3 });
+                return GameE3
+                    .OrderBy(b => b.GameE3.Team1Goals)
+                    .ThenBy(b => b.GameE3.Team2Goals)
+                    .GroupBy(p => p.GameE3.Formatted)
+                    .ToDictionary(g => g.Key, g => g.Select(p => p.Name).ToList());
+                break;
+
+            case "GameE4":
+                var GameE4 = _allPlayersBets.Select(p => new { p.Name, p.GameE4 });
+                return GameE4
+                    .OrderBy(b => b.GameE4.Team1Goals)
+                    .ThenBy(b => b.GameE4.Team2Goals)
+                    .GroupBy(p => p.GameE4.Formatted)
+                    .ToDictionary(g => g.Key, g => g.Select(p => p.Name).ToList());
+                break;
+
+            case "GameE5":
+                var GameE5 = _allPlayersBets.Select(p => new { p.Name, p.GameE5 });
+                return GameE5
+                    .OrderBy(b => b.GameE5.Team1Goals)
+                    .ThenBy(b => b.GameE5.Team2Goals)
+                    .GroupBy(p => p.GameE5.Formatted)
+                    .ToDictionary(g => g.Key, g => g.Select(p => p.Name).ToList());
+                break;
+
+            case "GameE6":
+                var GameE6 = _allPlayersBets.Select(p => new { p.Name, p.GameE6 });
+                return GameE6
+                    .OrderBy(b => b.GameE6.Team1Goals)
+                    .ThenBy(b => b.GameE6.Team2Goals)
+                    .GroupBy(p => p.GameE6.Formatted)
+                    .ToDictionary(g => g.Key, g => g.Select(p => p.Name).ToList());
+                break;
+
+            // GRUPO F
+            case "GameF1":
+                var GameF1 = _allPlayersBets.Select(p => new { p.Name, p.GameF1 });
+                return GameF1
+                    .OrderBy(b => b.GameF1.Team1Goals)
+                    .ThenBy(b => b.GameF1.Team2Goals)
+                    .GroupBy(p => p.GameF1.Formatted)
+                    .ToDictionary(g => g.Key, g => g.Select(p => p.Name).ToList());
+                break;
+
+            case "GameF2":
+                var GameF2 = _allPlayersBets.Select(p => new { p.Name, p.GameF2 });
+                return GameF2
+                    .OrderBy(b => b.GameF2.Team1Goals)
+                    .ThenBy(b => b.GameF2.Team2Goals)
+                    .GroupBy(p => p.GameF2.Formatted)
+                    .ToDictionary(g => g.Key, g => g.Select(p => p.Name).ToList());
+                break;
+
+            case "GameF3":
+                var GameF3 = _allPlayersBets.Select(p => new { p.Name, p.GameF3 });
+                return GameF3
+                    .OrderBy(b => b.GameF3.Team1Goals)
+                    .ThenBy(b => b.GameF3.Team2Goals)
+                    .GroupBy(p => p.GameF3.Formatted)
+                    .ToDictionary(g => g.Key, g => g.Select(p => p.Name).ToList());
+                break;
+
+            case "GameF4":
+                var GameF4 = _allPlayersBets.Select(p => new { p.Name, p.GameF4 });
+                return GameF4
+                    .OrderBy(b => b.GameF4.Team1Goals)
+                    .ThenBy(b => b.GameF4.Team2Goals)
+                    .GroupBy(p => p.GameF4.Formatted)
+                    .ToDictionary(g => g.Key, g => g.Select(p => p.Name).ToList());
+                break;
+
+            case "GameF5":
+                var GameF5 = _allPlayersBets.Select(p => new { p.Name, p.GameF5 });
+                return GameF5
+                    .OrderBy(b => b.GameF5.Team1Goals)
+                    .ThenBy(b => b.GameF5.Team2Goals)
+                    .GroupBy(p => p.GameF5.Formatted)
+                    .ToDictionary(g => g.Key, g => g.Select(p => p.Name).ToList());
+                break;
+
+            case "GameF6":
+                var GameF6 = _allPlayersBets.Select(p => new { p.Name, p.GameF6 });
+                return GameF6
+                    .OrderBy(b => b.GameF6.Team1Goals)
+                    .ThenBy(b => b.GameF6.Team2Goals)
+                    .GroupBy(p => p.GameF6.Formatted)
+                    .ToDictionary(g => g.Key, g => g.Select(p => p.Name).ToList());
+                break;
+
+            // GRUPO G
+            case "GameG1":
+                var GameG1 = _allPlayersBets.Select(p => new { p.Name, p.GameG1 });
+                return GameG1
+                    .OrderBy(b => b.GameG1.Team1Goals)
+                    .ThenBy(b => b.GameG1.Team2Goals)
+                    .GroupBy(p => p.GameG1.Formatted)
+                    .ToDictionary(g => g.Key, g => g.Select(p => p.Name).ToList());
+                break;
+
+            case "GameG2":
+                var GameG2 = _allPlayersBets.Select(p => new { p.Name, p.GameG2 });
+                return GameG2
+                    .OrderBy(b => b.GameG2.Team1Goals)
+                    .ThenBy(b => b.GameG2.Team2Goals)
+                    .GroupBy(p => p.GameG2.Formatted)
+                    .ToDictionary(g => g.Key, g => g.Select(p => p.Name).ToList());
+                break;
+
+            case "GameG3":
+                var GameG3 = _allPlayersBets.Select(p => new { p.Name, p.GameG3 });
+                return GameG3
+                    .OrderBy(b => b.GameG3.Team1Goals)
+                    .ThenBy(b => b.GameG3.Team2Goals)
+                    .GroupBy(p => p.GameG3.Formatted)
+                    .ToDictionary(g => g.Key, g => g.Select(p => p.Name).ToList());
+                break;
+
+            case "GameG4":
+                var GameG4 = _allPlayersBets.Select(p => new { p.Name, p.GameG4 });
+                return GameG4
+                    .OrderBy(b => b.GameG4.Team1Goals)
+                    .ThenBy(b => b.GameG4.Team2Goals)
+                    .GroupBy(p => p.GameG4.Formatted)
+                    .ToDictionary(g => g.Key, g => g.Select(p => p.Name).ToList());
+                break;
+
+            case "GameG5":
+                var GameG5 = _allPlayersBets.Select(p => new { p.Name, p.GameG5 });
+                return GameG5
+                    .OrderBy(b => b.GameG5.Team1Goals)
+                    .ThenBy(b => b.GameG5.Team2Goals)
+                    .GroupBy(p => p.GameG5.Formatted)
+                    .ToDictionary(g => g.Key, g => g.Select(p => p.Name).ToList());
+                break;
+
+            case "GameG6":
+                var GameG6 = _allPlayersBets.Select(p => new { p.Name, p.GameG6 });
+                return GameG6
+                    .OrderBy(b => b.GameG6.Team1Goals)
+                    .ThenBy(b => b.GameG6.Team2Goals)
+                    .GroupBy(p => p.GameG6.Formatted)
+                    .ToDictionary(g => g.Key, g => g.Select(p => p.Name).ToList());
+                break;
+
+            // GRUPO H
+            case "GameH1":
+                var GameH1 = _allPlayersBets.Select(p => new { p.Name, p.GameH1 });
+                return GameH1
+                    .OrderBy(b => b.GameH1.Team1Goals)
+                    .ThenBy(b => b.GameH1.Team2Goals)
+                    .GroupBy(p => p.GameH1.Formatted)
+                    .ToDictionary(g => g.Key, g => g.Select(p => p.Name).ToList());
+                break;
+
+            case "GameH2":
+                var GameH2 = _allPlayersBets.Select(p => new { p.Name, p.GameH2 });
+                return GameH2
+                    .OrderBy(b => b.GameH2.Team1Goals)
+                    .ThenBy(b => b.GameH2.Team2Goals)
+                    .GroupBy(p => p.GameH2.Formatted)
+                    .ToDictionary(g => g.Key, g => g.Select(p => p.Name).ToList());
+                break;
+
+            case "GameH3":
+                var GameH3 = _allPlayersBets.Select(p => new { p.Name, p.GameH3 });
+                return GameH3
+                    .OrderBy(b => b.GameH3.Team1Goals)
+                    .ThenBy(b => b.GameH3.Team2Goals)
+                    .GroupBy(p => p.GameH3.Formatted)
+                    .ToDictionary(g => g.Key, g => g.Select(p => p.Name).ToList());
+                break;
+
+            case "GameH4":
+                var GameH4 = _allPlayersBets.Select(p => new { p.Name, p.GameH4 });
+                return GameH4
+                    .OrderBy(b => b.GameH4.Team1Goals)
+                    .ThenBy(b => b.GameH4.Team2Goals)
+                    .GroupBy(p => p.GameH4.Formatted)
+                    .ToDictionary(g => g.Key, g => g.Select(p => p.Name).ToList());
+                break;
+
+            case "GameH5":
+                var GameH5 = _allPlayersBets.Select(p => new { p.Name, p.GameH5 });
+                return GameH5
+                    .OrderBy(b => b.GameH5.Team1Goals)
+                    .ThenBy(b => b.GameH5.Team2Goals)
+                    .GroupBy(p => p.GameH5.Formatted)
+                    .ToDictionary(g => g.Key, g => g.Select(p => p.Name).ToList());
+                break;
+
+            case "GameH6":
+                var GameH6 = _allPlayersBets.Select(p => new { p.Name, p.GameH6 });
+                return GameH6
+                    .OrderBy(b => b.GameH6.Team1Goals)
+                    .ThenBy(b => b.GameH6.Team2Goals)
+                    .GroupBy(p => p.GameH6.Formatted)
+                    .ToDictionary(g => g.Key, g => g.Select(p => p.Name).ToList());
+                break;
+
+            default:
+                return new Dictionary<string, List<string>>();
+                break;
+        }
+
+    }
+
+    private void SetupGameChart(string gameTitle)
+    {
+        if (_betsSummary is null || !_betsSummary.Any())
+            return;
+
+        _config.Options.Title.Display = true;
+        _config.Options.Title.Text = gameTitle;
+
+        _config.Data.Labels.Clear();
+        var dataset = new PieDataset<int>();
+        var backgroundColors = new List<string>();
+        foreach (var bet in _betsSummary)
+        {
+            _config.Data.Labels.Add(bet.Key);
+            dataset.Add(bet.Value.Count);
+            backgroundColors.Add(ColorUtil.RandomColorString());
+        }
+
+        dataset.BackgroundColor = backgroundColors.ToArray();
+        _config.Data.Datasets.Clear();
+        _config.Data.Datasets.Add(dataset);
+    }
+
+    private void SetupChart()
+    {
+        _config.Options.Title.Display = true;
+        _config.Options.Title.Text = $"ChartJs.Blazor Pie Chart";
+
+        _config.Data.Labels.Clear();
+        foreach (string color in new[] { "Red", "Yellow", "Green", "Blue" })
+        {
+            _config.Data.Labels.Add(color);
+        }
+
+        var dataset = new PieDataset<int>(new[] { 6, 5, 3, 7 })
+            {
+                BackgroundColor = new[]
+                                                                                                {
+                    ColorUtil.RandomColorString(), // Slice 1 aka "Red"
+                    ColorUtil.RandomColorString(), // Slice 2 aka "Yellow"
+                    ColorUtil.RandomColorString(), // Slice 3 aka "Green"
+                    ColorUtil.RandomColorString(), // Slice 4 aka "Blue"
+                    //ColorUtil.ColorHexString(255, 99, 132), // Slice 1 aka "Red"
+                    //ColorUtil.ColorHexString(255, 205, 86), // Slice 2 aka "Yellow"
+                    //ColorUtil.ColorHexString(75, 192, 192), // Slice 3 aka "Green"
+                    //ColorUtil.ColorHexString(54, 162, 235), // Slice 4 aka "Blue"
+                }
+            };
+
+        _config.Data.Datasets.Clear();
+        _config.Data.Datasets.Add(dataset);
+    }
+}

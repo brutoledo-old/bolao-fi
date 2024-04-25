@@ -1,0 +1,330 @@
+﻿[
+  {
+    "name": "Grupo A",
+    "matches": [
+      {
+        "team1": "images/teams/qatar.jpg",
+        "team2": "images/teams/equador.jpg",
+        "gameKey": "GameA1",
+        "gameTitle": "Qatar x Equador"
+      },
+      {
+        "team1": "images/teams/senegal.png",
+        "team2": "images/teams/holanda.png",
+        "gameKey": "GameA2",
+        "gameTitle": "Senegal x Holanda"
+      },
+      {
+        "team1": "images/teams/qatar.jpg",
+        "team2": "images/teams/senegal.png",
+        "gameKey": "GameA3",
+        "gameTitle": "Qatar x Senegal"
+      },
+      {
+        "team1": "images/teams/equador.jpg",
+        "team2": "images/teams/holanda.png",
+        "gameKey": "GameA4",
+        "gameTitle": "Equador x Holanda"
+      },
+      {
+        "team1": "images/teams/qatar.jpg",
+        "team2": "images/teams/holanda.png",
+        "gameKey": "GameA5",
+        "gameTitle": "Qatar x Holanda"
+      },
+      {
+        "team1": "images/teams/equador.jpg",
+        "team2": "images/teams/senegal.png",
+        "gameKey": "GameA6",
+        "gameTitle": "Equador x Senegal"
+      }
+    ]
+  },
+  {
+    "name": "Grupo B",
+    "matches": [
+      {
+        "team1": "images/teams/inglaterra.png",
+        "team2": "images/teams/ira.png",
+        "gameKey": "GameB1",
+        "gameTitle": "Inglaterra x Irã"
+      },
+      {
+        "team1": "images/teams/eua.png",
+        "team2": "images/teams/pais_gales.jpg",
+        "gameKey": "GameB2",
+        "gameTitle": "EUA x Pais de Gales"
+      },
+      {
+        "team1": "images/teams/inglaterra.png",
+        "team2": "images/teams/eua.png",
+        "gameKey": "GameB3",
+        "gameTitle": "Inglaterra x EUA"
+      },
+      {
+        "team1": "images/teams/ira.png",
+        "team2": "images/teams/pais_gales.jpg",
+        "gameKey": "GameB4",
+        "gameTitle": "Irã x Pais de Gales"
+      },
+      {
+        "team1": "images/teams/inglaterra.png",
+        "team2": "images/teams/pais_gales.jpg",
+        "gameKey": "GameB5",
+        "gameTitle": "Inglaterra x Pais de Gales"
+      },
+      {
+        "team1": "images/teams/ira.png",
+        "team2": "images/teams/eua.png",
+        "gameKey": "GameB6",
+        "gameTitle": "Irã x EUA"
+      }
+    ]
+  },
+  {
+    "name": "Grupo C",
+    "matches": [
+      {
+        "team1": "images/teams/argentina.png",
+        "team2": "images/teams/arabia_saudita.png",
+        "gameKey": "GameC1",
+        "gameTitle": "Argentina x Arabia Saudita"
+      },
+      {
+        "team1": "images/teams/mexico.png",
+        "team2": "images/teams/polonia.png",
+        "gameKey": "GameC2",
+        "gameTitle": "México x Polonia"
+      },
+      {
+        "team1": "images/teams/argentina.png",
+        "team2": "images/teams/mexico.png",
+        "gameKey": "GameC3",
+        "gameTitle": "Argentina x México"
+      },
+      {
+        "team1": "images/teams/arabia_saudita.png",
+        "team2": "images/teams/polonia.png",
+        "gameKey": "GameC4",
+        "gameTitle": "Arabia Saudita x Polonia"
+      },
+      {
+        "team1": "images/teams/argentina.png",
+        "team2": "images/teams/polonia.png",
+        "gameKey": "GameC5",
+        "gameTitle": "Argentina x Polonia"
+      },
+      {
+        "team1": "images/teams/arabia_saudita.png",
+        "team2": "images/teams/mexico.png",
+        "gameKey": "GameC6",
+        "gameTitle": "Arabia Saudita x México"
+      }
+    ]
+  },
+  {
+    "name": "Grupo D",
+    "matches": [
+      {
+        "team1": "images/teams/franca.png",
+        "team2": "images/teams/australia.png",
+        "gameKey": "GameD1",
+        "gameTitle": "França x Australia"
+      },
+      {
+        "team1": "images/teams/dinamarca.png",
+        "team2": "images/teams/tunisia.png",
+        "gameKey": "GameD2",
+        "gameTitle": "Dinamarca x Túnisia"
+      },
+      {
+        "team1": "images/teams/franca.png",
+        "team2": "images/teams/dinamarca.png",
+        "gameKey": "GameD3",
+        "gameTitle": "França x Dinamarca"
+      },
+      {
+        "team1": "images/teams/australia.png",
+        "team2": "images/teams/tunisia.png",
+        "gameKey": "GameD4",
+        "gameTitle": "Australia x Túnisia"
+      },
+      {
+        "team1": "images/teams/franca.png",
+        "team2": "images/teams/tunisia.png",
+        "gameKey": "GameD5",
+        "gameTitle": "França x Túnisia"
+      },
+      {
+        "team1": "images/teams/australia.png",
+        "team2": "images/teams/dinamarca.png",
+        "gameKey": "GameD6",
+        "gameTitle": "Australia x Dinamarca"
+      }
+    ]
+  },
+  {
+    "name": "Grupo E",
+    "matches": [
+      {
+        "team1": "images/teams/espanha.png",
+        "team2": "images/teams/costa_rica.png",
+        "gameKey": "GameE1",
+        "gameTitle": "Espanha x Costa Rica"
+      },
+      {
+        "team1": "images/teams/alemanha.png",
+        "team2": "images/teams/japao.png",
+        "gameKey": "GameE2",
+        "gameTitle": "Alemanha x Japao"
+      },
+      {
+        "team1": "images/teams/espanha.png",
+        "team2": "images/teams/alemanha.png",
+        "gameKey": "GameE3",
+        "gameTitle": "Espanha x Alemanha"
+      },
+      {
+        "team1": "images/teams/costa_rica.png",
+        "team2": "images/teams/japao.png",
+        "gameKey": "GameE4",
+        "gameTitle": "Costa Rica x Japao"
+      },
+      {
+        "team1": "images/teams/espanha.png",
+        "team2": "images/teams/japao.png",
+        "gameKey": "GameE5",
+        "gameTitle": "Espanha x Japao"
+      },
+      {
+        "team1": "images/teams/costa_rica.png",
+        "team2": "images/teams/alemanha.png",
+        "gameKey": "GameE6",
+        "gameTitle": "Costa Rica x Alemanha"
+      }
+    ]
+  },
+  {
+    "name": "Grupo F",
+    "matches": [
+      {
+        "team1": "images/teams/belgica.png",
+        "team2": "images/teams/canada.jpg",
+        "gameKey": "GameF1",
+        "gameTitle": "Bélgica x Canada"
+      },
+      {
+        "team1": "images/teams/marrocos.png",
+        "team2": "images/teams/croacia.png",
+        "gameKey": "GameF2",
+        "gameTitle": "Marrocos x Croácia"
+      },
+      {
+        "team1": "images/teams/belgica.png",
+        "team2": "images/teams/marrocos.png",
+        "gameKey": "GameF3",
+        "gameTitle": "Bélgica x Marrocos"
+      },
+      {
+        "team1": "images/teams/canada.jpg",
+        "team2": "images/teams/croacia.png",
+        "gameKey": "GameF4",
+        "gameTitle": "Canada x Croácia"
+      },
+      {
+        "team1": "images/teams/belgica.png",
+        "team2": "images/teams/croacia.png",
+        "gameKey": "GameF5",
+        "gameTitle": "Bélgica x Croácia"
+      },
+      {
+        "team1": "images/teams/canada.jpg",
+        "team2": "images/teams/marrocos.png",
+        "gameKey": "GameF6",
+        "gameTitle": "Canada x Marrocos"
+      }
+    ]
+  },
+  {
+    "name": "Grupo G",
+    "matches": [
+      {
+        "team1": "images/teams/brasil.png",
+        "team2": "images/teams/servia.png",
+        "gameKey": "GameG1",
+        "gameTitle": "Brasil x Servia"
+      },
+      {
+        "team1": "images/teams/suica.png",
+        "team2": "images/teams/camaroes.jpg",
+        "gameKey": "GameG2",
+        "gameTitle": "Suiça x Camarões"
+      },
+      {
+        "team1": "images/teams/brasil.png",
+        "team2": "images/teams/suica.png",
+        "gameKey": "GameG3",
+        "gameTitle": "Brasil x Suiça"
+      },
+      {
+        "team1": "images/teams/servia.png",
+        "team2": "images/teams/camaroes.jpg",
+        "gameKey": "GameG4",
+        "gameTitle": "Servia x Camarões"
+      },
+      {
+        "team1": "images/teams/brasil.png",
+        "team2": "images/teams/camaroes.jpg",
+        "gameKey": "GameG5",
+        "gameTitle": "Brasil x Camarões"
+      },
+      {
+        "team1": "images/teams/servia.png",
+        "team2": "images/teams/suica.png",
+        "gameKey": "GameG6",
+        "gameTitle": "Servia x Suiça"
+      }
+    ]
+  },
+  {
+    "name": "Grupo H",
+    "matches": [
+      {
+        "team1": "images/teams/portugal.jpg",
+        "team2": "images/teams/gana.png",
+        "gameKey": "GameH1",
+        "gameTitle": "Portugal x Gana"
+      },
+      {
+        "team1": "images/teams/uruguai.png",
+        "team2": "images/teams/coreia_sul.png",
+        "gameKey": "GameH2",
+        "gameTitle": "Uruguai x Coreia Do Sul"
+      },
+      {
+        "team1": "images/teams/portugal.jpg",
+        "team2": "images/teams/uruguai.png",
+        "gameKey": "GameH3",
+        "gameTitle": "Portugal x Uruguai"
+      },
+      {
+        "team1": "images/teams/gana.png",
+        "team2": "images/teams/coreia_sul.png",
+        "gameKey": "GameH4",
+        "gameTitle": "Gana x Coreia Do Sul"
+      },
+      {
+        "team1": "images/teams/portugal.jpg",
+        "team2": "images/teams/coreia_sul.png",
+        "gameKey": "GameH5",
+        "gameTitle": "Portugal x Coreia Do Sul"
+      },
+      {
+        "team1": "images/teams/gana.png",
+        "team2": "images/teams/uruguai.png",
+        "gameKey": "GameH6",
+        "gameTitle": "Gana x Uruguai"
+      }
+    ]
+  }
+]
